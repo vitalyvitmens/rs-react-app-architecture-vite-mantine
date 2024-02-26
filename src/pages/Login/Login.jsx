@@ -2,7 +2,7 @@ import { useAuth } from '../../context/AuthProvider'
 import { useEffect, useTransition } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Component } from '../../components/Component/Component'
-import { Button } from '../../components/Button/Button'
+import { BtnMantine } from '../../components/BtnMantine/BtnMantine'
 import { CustomInput } from '../../components/CustomInput/CustomInput'
 import styles from './Login.module.css'
 
@@ -49,10 +49,13 @@ export const Login = () => {
           size={20}
         />
         <Component
-          component={Button}
+          component={BtnMantine}
+          style={{border: '1px solid black', marginTop: '22px'}}
           title="Login"
           disabled={isPending}
           type="submit"
+          variant="filled"
+          color="teal"
         />
       </form>
       {isPending && <div>Загрузка...</div>}

@@ -1,6 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { Component } from '../../components/Component/Component'
-import { Button } from '../../components/Button/Button'
+import { BtnMantine } from '../../components/BtnMantine/BtnMantine'
 import { NotFound } from '../../pages/NotFound/NotFound'
 import { useFetchEpisodes } from '../../hooks/useFetchEpisodes'
 import { useFetchCharacters } from '../../hooks/useFetchCharacters'
@@ -221,8 +221,11 @@ export const Detail = () => {
         </div>
       )}
       <Component
-        component={Button}
+        component={BtnMantine}
+        style={{ border: '1px solid black', display: 'flex', margin: 'auto' }}
         title="Вернуться назад к списку"
+        variant="gradient"
+        gradient={{ from: 'red', to: 'violet', deg: 64 }}
         onClick={() => navigate(-1)}
       />
     </div>

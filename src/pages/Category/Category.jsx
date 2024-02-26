@@ -1,7 +1,7 @@
 import { useCallback, useRef, useState, useTransition } from 'react'
 import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 import { Component } from '../../components/Component/Component'
-import { Button } from '../../components/Button/Button'
+import { BtnMantine } from '../../components/BtnMantine/BtnMantine.jsx'
 import { CustomSelect } from '../../components/CustomSelect/CustomSelect'
 import { NotFound } from '../../pages/NotFound/NotFound'
 import { useFetchCategory } from '../../hooks/useFetchCategory.jsx'
@@ -173,14 +173,20 @@ export const Category = () => {
 					>
 						Конец списка
 						<Component
-							component={Button}
+							component={BtnMantine}
+							style={{border: '1px solid black', marginLeft: '5px'}}
 							title="В начало списка"
+							variant="gradient"
+              gradient={{ from: 'red', to: 'violet', deg: 64 }}
 							disabled={isPending}
 							onClick={handlerScrollUp}
 						/>
 						<Component
-							component={Button}
+							component={BtnMantine}
+							style={{border: '1px solid black', marginLeft: '5px'}}
 							title="На главную"
+							variant="gradient"
+              gradient={{ from: 'red', to: 'violet', deg: 64 }}
 							disabled={isPending}
 							onClick={() => navigate('/')}
 						/>
