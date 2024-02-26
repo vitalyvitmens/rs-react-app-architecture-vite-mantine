@@ -2,7 +2,7 @@ import { useCallback, useRef, useState, useTransition } from 'react'
 import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 import { Component } from '../../components/Component/Component'
 import { BtnMantine } from '../../components/BtnMantine/BtnMantine.jsx'
-import { CustomSelect } from '../../components/CustomSelect/CustomSelect'
+import { SelectMantine } from '../../components/SelectMantine/SelectMantine.jsx'
 import { NotFound } from '../../pages/NotFound/NotFound'
 import { useFetchCategory } from '../../hooks/useFetchCategory.jsx'
 import styles from './Category.module.css'
@@ -111,13 +111,15 @@ export const Category = () => {
 		<div className={styles.Category}>
 			<form>
 				<Component
-					component={CustomSelect}
+					component={SelectMantine}
 					label="Сортировать по дате создания:"
+					data={["Без сортировки", "По возрастанию", "По убыванию"]}
 					type="select"
 					id="select"
 					name="select"
 					value={sort || ''}
-					onChange={handleChangeSort}
+					defaultValue="Без сортировки"
+					onChange={() => handleChangeSort}
 				/>
 			</form>
 			<ol style={{ marginLeft: '2rem' }}>

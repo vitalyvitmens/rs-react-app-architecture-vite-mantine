@@ -1,4 +1,5 @@
 import { Button } from '@mantine/core'
+import '@mantine/core/styles.css'
 
 export const BtnMantine = ({ title, type, onClick, disabled, variant, color, gradient, style, children }) => {
   return (

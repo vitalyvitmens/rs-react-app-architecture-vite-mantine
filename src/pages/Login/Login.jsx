@@ -3,7 +3,7 @@ import { useEffect, useTransition } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Component } from '../../components/Component/Component'
 import { BtnMantine } from '../../components/BtnMantine/BtnMantine'
-import { CustomInput } from '../../components/CustomInput/CustomInput'
+import { InputMantine } from '../../components/InputMantine/InputMantine'
 import styles from './Login.module.css'
 
 export const Login = () => {
@@ -38,7 +38,8 @@ export const Login = () => {
     <div className={styles.Login}>
       <form onSubmit={handleSubmit}>
         <Component
-          component={CustomInput}
+          component={InputMantine}
+          style={{padding: '10px'}}
           label={'USERNAME'}
           type="text"
           id="text"
@@ -46,11 +47,11 @@ export const Login = () => {
           autoComplete="name"
           placeholder={'Ваше имя'}
           radius={5}
-          size={20}
+          size={30}
         />
         <Component
           component={BtnMantine}
-          style={{border: '1px solid black', marginTop: '22px'}}
+          style={{border: '1px solid black', marginTop: '42px'}}
           title="Login"
           disabled={isPending}
           type="submit"
