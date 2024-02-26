@@ -117,9 +117,9 @@ export const Category = () => {
 					type="select"
 					id="select"
 					name="select"
-					value={sort || ''}
+					// value={sort || ''}
 					defaultValue="Без сортировки"
-					onChange={() => handleChangeSort}
+					onChange={handleChangeSort}
 				/>
 			</form>
 			<ol style={{ marginLeft: '2rem' }}>
