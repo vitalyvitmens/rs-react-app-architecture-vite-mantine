@@ -17,8 +17,10 @@ export const InputMantine = forwardRef(({ label, variant, size, radius,  descrip
      name={name}
      autoComplete={autoComplete}
      disabled={disabled}
-     ref={ref}
-   />
+     ref={ref}> 
+     <option value="">Без сортировки</option>
+     <option value="ASC">По возрастанию</option>
+     <option value="DESC">По убыванию</option></TextInput>
   )
 })
 
