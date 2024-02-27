@@ -28,9 +28,9 @@ const Detail = lazy(() =>
     default: module.Detail,
   }))
 )
-const NotFound = lazy(() =>
-  import('./pages/NotFound/NotFound').then((module) => ({
-    default: module.NotFound,
+const NotFoundMantine = lazy(() =>
+  import('./pages/NotFoundMantine/NotFoundMantine').then((module) => ({
+    default: module.NotFoundMantine,
   }))
 )
 
@@ -72,7 +72,7 @@ export const App = () => {
                 path="*"
                 element={
                   <ErrorBoundary>
-                    <NotFound />
+                    <NotFoundMantine />
                   </ErrorBoundary>
                 }
               />

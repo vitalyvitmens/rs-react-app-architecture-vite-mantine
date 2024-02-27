@@ -3,7 +3,7 @@ import { Link, useSearchParams, useNavigate } from 'react-router-dom'
 import { Component } from '../../components/Component/Component'
 import { BtnMantine } from '../../components/BtnMantine/BtnMantine.jsx'
 import { SelectMantine } from '../../components/SelectMantine/SelectMantine.jsx'
-import { NotFound } from '../../pages/NotFound/NotFound'
+import { NotFoundMantine } from '../NotFoundMantine/NotFoundMantine.jsx'
 import { useFetchCategory } from '../../hooks/useFetchCategory.jsx'
 import styles from './Category.module.css'
 
@@ -110,7 +110,7 @@ export const Category = () => {
   }
 
   if (category && !['characters', 'locations', 'episodes'].includes(category)) {
-    return <NotFound />
+    return <NotFoundMantine />
   }
 
   return (

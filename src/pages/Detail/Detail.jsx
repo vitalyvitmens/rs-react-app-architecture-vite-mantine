@@ -1,7 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom'
 import { Component } from '../../components/Component/Component'
 import { BtnMantine } from '../../components/BtnMantine/BtnMantine'
-import { NotFound } from '../../pages/NotFound/NotFound'
+import { NotFoundMantine } from '../NotFoundMantine/NotFoundMantine'
 import { useFetchEpisodes } from '../../hooks/useFetchEpisodes'
 import { useFetchCharacters } from '../../hooks/useFetchCharacters'
 import { useFetchCategoryId } from '../../hooks/useFetchCategoryId'
@@ -18,7 +18,7 @@ export const Detail = () => {
   }
 
   if (!categoriesId && !loading) {
-    return <NotFound />
+    return <NotFoundMantine />
   }
 
   const imgStyle = {
