@@ -4,7 +4,7 @@ import '@mantine/core/styles.css'
 
 export const SelectMantine = forwardRef(
   (
-    { label, data, type, id, name, value, defaultValue, onChange, children },
+    { label, data, type, id, name, value, defaultValue, placeholder, onChange },
     ref,
   ) => {
     return (
@@ -16,14 +16,10 @@ export const SelectMantine = forwardRef(
         value={value}
         name={name}
         defaultValue={defaultValue}
+        placeholder={placeholder}
         onChange={onChange}
         ref={ref}
-      >
-        {children}
-        {/* <option value="">Без сортировки</option>
-      <option value="ASC">По возрастанию</option>
-      <option value="DESC">По убыванию</option> */}
-      </Select>
+      />
     )
   },
 )

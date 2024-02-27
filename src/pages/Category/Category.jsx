@@ -78,12 +78,18 @@ export const Category = () => {
     return copy
   }
 
-  const handleChangeSort = (event) => {
-    const value = event.target.value
+  const handleChangeSort = (value) => {
+    const sortCodes = {
+      'Без сортировки': '',
+      'По возрастанию': 'ASC',
+      'По убыванию': 'DESC',
+    }
+
+    const sortCode = sortCodes[value] || ''
     startTransition(() => {
       setQuery(id)
       setPageNumber(1)
-      setSearchParams({ sort: value })
+      setSearchParams({ sort: sortCode })
     })
   }
 
@@ -117,8 +123,14 @@ export const Category = () => {
           type="select"
           id="select"
           name="select"
-          // value={sort || ''}
+          value={sort || ''}
           defaultValue="Без сортировки"
+          placeholder={
+            sort
+              ? (sort === 'ASC' && 'По возрастанию') ||
+                (sort === 'DESC' && 'По убыванию')
+              : 'Без сортировки'
+          }
           onChange={handleChangeSort}
         />
       </form>
