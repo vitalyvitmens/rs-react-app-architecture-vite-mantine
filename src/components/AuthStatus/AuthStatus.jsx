@@ -2,7 +2,7 @@ import { useAuth } from '../../context/AuthProvider'
 import { useEffect, useTransition } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Component } from '../Component/Component'
-import { Button } from '../Button/Button'
+import { BtnMantine } from '../BtnMantine/BtnMantine'
 import styles from './AuthStatus.module.css'
 
 export function AuthStatus() {
@@ -31,8 +31,11 @@ export function AuthStatus() {
       <div className={styles.authStatus}>
         Вы не авторизованы!
         <Component
-          component={Button}
+          component={BtnMantine}
+          style={{border: '1px solid black', marginTop: '22px'}}
           title="Авторизоваться"
+          variant="filled"
+          color="teal"
           disabled={isPending}
           onClick={() => {}}
         />
@@ -45,8 +48,11 @@ export function AuthStatus() {
     <div className={styles.authStatus}>
       Добро пожаловать <span style={{ fontWeight: 'bold' }}>{auth.user}</span>
       <Component
-        component={Button}
+        component={BtnMantine}
+        style={{border: '1px solid black', marginTop: '22px'}}
         title="Выйти"
+        variant="filled"
+        color="#dc2626"
         disabled={isPending}
         onClick={handleSignout}
       />

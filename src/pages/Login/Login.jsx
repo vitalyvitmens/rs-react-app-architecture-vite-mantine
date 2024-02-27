@@ -2,8 +2,8 @@ import { useAuth } from '../../context/AuthProvider'
 import { useEffect, useTransition } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Component } from '../../components/Component/Component'
-import { Button } from '../../components/Button/Button'
-import { CustomInput } from '../../components/CustomInput/CustomInput'
+import { BtnMantine } from '../../components/BtnMantine/BtnMantine'
+import { InputMantine } from '../../components/InputMantine/InputMantine'
 import styles from './Login.module.css'
 
 export const Login = () => {
@@ -38,7 +38,8 @@ export const Login = () => {
     <div className={styles.Login}>
       <form onSubmit={handleSubmit}>
         <Component
-          component={CustomInput}
+          component={InputMantine}
+          style={{padding: '10px'}}
           label={'USERNAME'}
           type="text"
           id="text"
@@ -46,13 +47,16 @@ export const Login = () => {
           autoComplete="name"
           placeholder={'Ваше имя'}
           radius={5}
-          size={20}
+          size={30}
         />
         <Component
-          component={Button}
+          component={BtnMantine}
+          style={{border: '1px solid black', marginTop: '42px'}}
           title="Login"
           disabled={isPending}
           type="submit"
+          variant="filled"
+          color="teal"
         />
       </form>
       {isPending && <div>Загрузка...</div>}
