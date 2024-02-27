@@ -1,1 +1,0 @@
-import{j as e}from"./index-usw2FdT_.js";const o="_Home_7bjxv_1",s={Home:o},t=()=>e.jsx("div",{className:s.Home,children:e.jsx("h1",{children:"Добро пожаловать в приложение по вселенной Рика и Морти!"})});export{t as Home};
