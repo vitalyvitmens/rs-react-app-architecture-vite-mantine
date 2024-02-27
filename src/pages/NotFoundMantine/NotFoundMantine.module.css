@@ -1,0 +1,33 @@
+:root {
+  --base-size: 16px;
+}
+
+.root {
+  padding-top: calc(var(--base-size) * 5);
+  padding-bottom: calc(var(--base-size) * 5);
+}
+
+.title {
+  font-weight: 900;
+  font-size: calc(var(--base-size) * 2.125);
+  margin-bottom: var(--mantine-spacing-md);
+  font-family:
+    Greycliff CF,
+    var(--mantine-font-family);
+
+  @media (max-width: 480px) {
+    font-size: calc(var(--base-size) * 2);
+  }
+}
+
+.mobileImage {
+  @media (min-width: 48em) {
+    display: none;
+  }
+}
+
+.desktopImage {
+  @media (max-width: 47.99em) {
+    display: none;
+  }
+}
