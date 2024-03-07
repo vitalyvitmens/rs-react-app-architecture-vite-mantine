@@ -1,38 +1,9 @@
 import { AuthProvider } from './context/AuthProvider'
-import { lazy } from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
+import { routes } from './routes'
 import { PrivateRoute } from './components/PrivateRoute/PrivateRoute'
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary'
 import styles from './app.module.css'
-
-const Login = lazy(() =>
-  import('./pages/Login/Login').then((module) => ({
-    default: module.Login,
-  }))
-)
-const Navigation = lazy(() =>
-  import('./layout/Navigation/Navigation').then((module) => ({
-    default: module.Navigation,
-  }))
-)
-const Home = lazy(() =>
-  import('./pages/Home/Home').then((module) => ({ default: module.Home }))
-)
-const Category = lazy(() =>
-  import('./pages/Category/Category').then((module) => ({
-    default: module.Category,
-  }))
-)
-const Detail = lazy(() =>
-  import('./pages/Detail/Detail').then((module) => ({
-    default: module.Detail,
-  }))
-)
-const NotFoundMantine = lazy(() =>
-  import('./pages/NotFoundMantine/NotFoundMantine').then((module) => ({
-    default: module.NotFoundMantine,
-  }))
-)
 
 export const App = () => {
   return (
@@ -40,51 +11,21 @@ export const App = () => {
       <HashRouter>
         <AuthProvider>
           <Routes>
-            <Route
-              element={
-                <ErrorBoundary>
-                  <Navigation />
-                </ErrorBoundary>
-              }
-            >
-              <Route path="/" element={<Home />} />
+            {routes.map((route) => (
               <Route
-                path="/:category"
-                element={
-                  <PrivateRoute>
-                    <ErrorBoundary>
-                      <Category />
-                    </ErrorBoundary>
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="/:category/:id"
-                element={
-                  <PrivateRoute>
-                    <ErrorBoundary>
-                      <Detail />
-                    </ErrorBoundary>
-                  </PrivateRoute>
-                }
-              />
-              <Route
-                path="*"
+                key={route.path}
+                path={route.path}
                 element={
                   <ErrorBoundary>
-                    <NotFoundMantine />
+                    {route.children ? (
+                      <PrivateRoute route={route} />
+                    ) : (
+                      route.element
+                    )}
                   </ErrorBoundary>
                 }
               />
-            </Route>
-            <Route
-              path="/login"
-              element={
-                <ErrorBoundary>
-                  <Login />
-                </ErrorBoundary>
-              }
-            />
+            ))}
           </Routes>
         </AuthProvider>
       </HashRouter>
