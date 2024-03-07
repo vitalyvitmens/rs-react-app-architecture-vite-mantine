@@ -10,7 +10,7 @@ export const routes = [
     path: '/*',
     element: <Navigation />,
     children: [
-      { path: '/*', element: <Home /> },
+      { path: '/', element: <Home /> },
       { path: '/:category', element: <Category /> },
       { path: '/:category/:id', element: <Detail /> },
       { path: '*', element: <NotFoundMantine /> },

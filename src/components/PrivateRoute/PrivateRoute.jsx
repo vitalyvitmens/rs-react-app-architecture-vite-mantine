@@ -12,8 +12,8 @@ export function PrivateRoute({ route }) {
 
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
+      {route.element}
       <Routes>
-        <Route path={route.path} element={route.element} />
         {route.children.map((child) => (
           <Route key={child.path} path={child.path} element={child.element} />
         ))}
