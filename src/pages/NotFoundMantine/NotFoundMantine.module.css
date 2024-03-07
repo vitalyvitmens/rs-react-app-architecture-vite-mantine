@@ -1,33 +1,67 @@
-:root {
-  --base-size: 16px;
+.NotFound {
+	width: 600px;
 }
 
-.root {
-  padding-top: calc(var(--base-size) * 5);
-  padding-bottom: calc(var(--base-size) * 5);
+.NotFound h1 {
+	margin-top: 70px;
+	color: rgb(215, 2, 2);
+	font-family: 'Baloo Bhai', cursive;
+	font-size: 36px;
+	text-align: center;
+	text-shadow: -1px 1px 1px black;
 }
 
-.title {
-  font-weight: 900;
-  font-size: calc(var(--base-size) * 2.125);
-  margin-bottom: var(--mantine-spacing-md);
-  font-family:
-    Greycliff CF,
-    var(--mantine-font-family);
-
-  @media (max-width: 480px) {
-    font-size: calc(var(--base-size) * 2);
-  }
+.NotFound p {
+	color: rgb(215, 2, 2);
+	font-family: 'Baloo Bhai', cursive;
+	font-size: 24px;
+	text-align: center;
+	text-shadow: -1px 1px 1px black;
 }
 
-.mobileImage {
-  @media (min-width: 48em) {
-    display: none;
-  }
+.NotFound link {
+	color: #027979;
+	font-family: 'Baloo Bhai', cursive;
+	font-size: 24px;
+	text-align: center;
+	transition: color 0.3s;
 }
 
-.desktopImage {
-  @media (max-width: 47.99em) {
-    display: none;
-  }
+.NotFound link:hover {
+	color: #f4f4f4;
+}
+
+.center {
+	display: flex;
+	font-size: 1.5rem;
+	font-weight: 600;
+	justify-content: center;
+	padding-top: 40px;
+	text-shadow: -1px 1px 1px black;
+}
+
+.center:hover {
+	opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+	.NotFound {
+		width: 40vh;
+	}
+
+	.NotFound h1 {
+		margin-top: 10px;
+		font-size: 30px;
+		margin-left: -30px;
+	}
+
+	.NotFound p {
+		font-size: 16px;
+		margin: 0 20px 0 -20px;
+	}
+
+	.center {
+		font-size: 1.125rem;
+		margin-left: -30px;
+	}
 }
