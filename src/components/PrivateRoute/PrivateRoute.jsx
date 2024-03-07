@@ -12,11 +12,12 @@ export function PrivateRoute({ route }) {
 
   return (
     <Suspense fallback={<h1>Loading...</h1>}>
-      {route.element}
       <Routes>
-        {route.children.map((child) => (
-          <Route key={child.path} path={child.path} element={child.element} />
-        ))}
+        <Route element={route.element}>
+          {route.children.map((child) => (
+            <Route key={child.path} path={child.path} element={child.element} />
+          ))}
+        </Route>
       </Routes>
     </Suspense>
   )
