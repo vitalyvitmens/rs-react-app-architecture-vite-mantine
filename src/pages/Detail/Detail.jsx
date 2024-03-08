@@ -14,7 +14,7 @@ import styles from './Detail.module.css'
 export const Detail = () => {
   const { loading, error, categoriesId, category } = useFetchCategoryId()
   const navigate = useNavigate()
-  
+
   const handleGoBack = () => navigate(-1)
 
   if (loading || !categoriesId) {
@@ -48,7 +48,12 @@ export const Detail = () => {
       {category === 'characters' && <ListEpisodes data={categoriesId} />}
       <Component
         component={BtnMantine}
-        style={{ border: '1px solid black', display: 'flex', margin: 'auto' }}
+        style={{
+          border: '1px solid black',
+          display: 'flex',
+          margin: 'auto',
+          padding: '0 10px 5px 10px',
+        }}
         title="Вернуться назад к списку"
         variant="gradient"
         gradient={{ from: 'red', to: 'violet', deg: 64 }}

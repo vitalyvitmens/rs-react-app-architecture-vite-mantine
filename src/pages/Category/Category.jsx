@@ -177,8 +177,7 @@ export const Category = () => {
         {!loading && !hasMore && (
           <div
             style={{
-              display: 'flex',
-              alignItems: 'end',
+              display: 'block',
               color: 'blue',
               fontSize: '2rem',
               fontWeight: '600',
@@ -188,7 +187,11 @@ export const Category = () => {
             Конец списка
             <Component
               component={BtnMantine}
-              style={{ border: '1px solid black', marginLeft: '5px' }}
+              style={{
+                border: '1px solid black',
+                marginLeft: '5px',
+                padding: '0 10px 5px 10px',
+              }}
               title="В начало списка"
               variant="gradient"
               gradient={{ from: 'red', to: 'violet', deg: 64 }}
@@ -197,7 +200,11 @@ export const Category = () => {
             />
             <Component
               component={BtnMantine}
-              style={{ border: '1px solid black', marginLeft: '5px' }}
+              style={{
+                border: '1px solid black',
+                marginLeft: '5px',
+                padding: '0 10px 5px 10px',
+              }}
               title="На главную"
               variant="gradient"
               gradient={{ from: 'red', to: 'violet', deg: 64 }}

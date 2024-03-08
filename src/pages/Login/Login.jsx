@@ -39,7 +39,6 @@ export const Login = () => {
       <form onSubmit={handleSubmit}>
         <Component
           component={InputMantine}
-          style={{padding: '10px'}}
           label={'USERNAME'}
           type="text"
           id="text"
@@ -51,7 +50,11 @@ export const Login = () => {
         />
         <Component
           component={BtnMantine}
-          style={{border: '1px solid black', marginTop: '42px'}}
+          style={{
+            border: '1px solid black',
+            marginTop: '42px',
+            marginLeft: '-25px',
+          }}
           title="Login"
           disabled={isPending}
           type="submit"

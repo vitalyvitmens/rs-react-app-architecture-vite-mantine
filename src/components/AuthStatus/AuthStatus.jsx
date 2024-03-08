@@ -49,7 +49,7 @@ export function AuthStatus() {
       Добро пожаловать <span style={{ fontWeight: 'bold' }}>{auth.user}</span>
       <Component
         component={BtnMantine}
-        style={{border: '1px solid black', marginTop: '22px'}}
+        style={{border: '1px solid black', marginTop: '16px'}}
         title="Выйти"
         variant="filled"
         color="#dc2626"
