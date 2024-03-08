@@ -54,6 +54,7 @@ export const Login = () => {
             border: '1px solid black',
             marginTop: '42px',
             marginLeft: '-25px',
+            padding: '0 10px 5px 10px',
           }}
           title="Login"
           disabled={isPending}
